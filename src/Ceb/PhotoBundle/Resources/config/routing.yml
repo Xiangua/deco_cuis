@@ -1,0 +1,16 @@
+ceb_photo_homepage:
+    pattern:  /home
+    defaults: { _controller: CebPhotoBundle:Default:index }
+
+ceb_photo_cuisine:
+    pattern:  /photocuisine
+    defaults: { _controller: CebPhotoBundle:Default:cuisine }
+
+ceb_photo_bain:
+    pattern:  /photobain
+    defaults: { _controller: CebPhotoBundle:Default:bain }
+
+ceb_photo_finition:
+    pattern:  /photofinition
+    defaults: { _controller: CebPhotoBundle:Default:finition }
+

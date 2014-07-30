@@ -1,0 +1,148 @@
+
+body {
+  background-attachment:fixed;
+  background-position:center center;
+  background-image:url(../img/fond-body.jpg);
+}
+
+.win {
+    right:              0px;
+    bottom:             0px;
+    top:                0px;
+    left:               0px;
+}
+
+.head {
+
+    position: relative;
+    min-width:1000px;
+    width:80%;
+    height: 200px;
+    margin:auto;
+}
+
+.body {
+
+    position:relative;
+    min-width:1000px;
+    width:80%;
+    min-height:700px;
+    border: 2px solid red;
+    margin:auto;
+}
+
+.footage {
+    position: relative;
+    min-width:1000px;
+    width:80%;
+    height: 50px;
+    border: 2px solid red;
+    margin:auto;
+}
+
+#menu {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    border-radius:8px;
+    text-align: center;
+}
+
+#menu li {
+    float: left ;
+    width:180px;
+    border: 2px solid #c89b59 ;
+    margin-left:10px;
+    border-radius:8px;
+}
+
+#menu li a {
+    display:block;
+    background:white;
+    text-decoration:none; 
+    color: #c89b59;
+    font: 1.2em "Trebuchet MS",Arial,sans-serif ;
+    line-height: 1em ;
+    padding: 3px 0 ;
+    text-align: center ;
+    border-radius:8px;
+}
+
+#menu li a:hover, #menu li a:focus {
+    background: #d5d86a;
+    border-radius:8px;
+}
+
+#menu li a:active {
+    background: #7ecbe4;
+    border-radius:8px;
+
+}
+
+
+.menu-fix {
+    position:absolute;
+    bottom:0;
+    margin:0 auto;
+    left:20px;
+}
+
+#titre {
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:0px;
+    font: 2em "Trebuchet MS",Arial,sans-serif ;
+}
+
+#logo {
+    position:absolute;
+    width:380px;
+    left:20px;
+}
+
+#nav {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    border-radius:8px;
+    text-align: center;
+}
+
+#nav li {
+    float: left ;
+    width:180px;
+    border: 2px solid #7ecbe4 ;
+    margin-left:10px;
+    border-radius:8px;
+}
+
+#nav li a {
+    display:block;
+    background:white;
+    text-decoration:none; 
+    color: #7ecbe4;
+    font: 1.2em "Trebuchet MS",Arial,sans-serif ;
+    line-height: 1em ;
+    padding: 3px 0 ;
+    text-align: center ;
+    border-radius:8px;
+}
+
+#nav li a:hover, #nav li a:focus {
+    background: #d5d86a;
+    border-radius:8px;
+}
+
+#nav li a:active {
+    background: #c89b59;
+    border-radius:8px;
+
+}
+
+
+.menu-photo {
+    position:relative;
+    top:10px;
+    left:100px;
+    margin:auto;
+}

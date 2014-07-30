@@ -1,0 +1,27 @@
+{# src/Sdz/BlogBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+	{{ parent() }} - Photos
+{% endblock %}
+
+{% block body %}
+
+	<div class="menu-photo">
+    	<ul id="nav">
+
+			<li><a href="{{ path('ceb_photo_homepage') }}">Travaux fini</a></li>
+			<li><a href="{{ path('ceb_photo_cuisine') }}">Cuisine</a></li>
+		    <li><a href="{{ path('ceb_photo_bain') }}">Bain</a></li>
+		    <li><a href="{{ path('ceb_photo_finition') }}">finition</a></li>
+
+		</ul>
+	</div>
+
+	<br />
+
+  {% block cebphoto_body %}
+  {% endblock %}
+
+{% endblock %}

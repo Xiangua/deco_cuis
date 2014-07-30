@@ -1,0 +1,12 @@
+ceb_autre:
+    resource: "@CebAutreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ceb_goldbook:
+    resource: "@CebGoldbookBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ceb_photo:
+    resource: "@CebPhotoBundle/Resources/config/routing.yml"
+    prefix:   /
+

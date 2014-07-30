@@ -1,0 +1,7 @@
+parameters:
+#    ceb_photo.example.class: Ceb\PhotoBundle\Example
+
+services:
+#    ceb_photo.example:
+#        class: %ceb_photo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

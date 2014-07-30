@@ -1,0 +1,7 @@
+parameters:
+#    ceb_autre.example.class: Ceb\AutreBundle\Example
+
+services:
+#    ceb_autre.example:
+#        class: %ceb_autre.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

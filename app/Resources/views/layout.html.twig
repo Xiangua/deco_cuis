@@ -1,0 +1,54 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>{% block title %}Deco cuisine{% endblock %}</title>
+
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+      <link rel="stylesheet" media="screen" type="text/css" href="{{ asset('css/spacegallery.css') }}" />
+    {% endblock %}
+  </head>
+
+  <body>
+    <div class="win">
+      <div class="head">
+      <a href="{{ path('ceb_photo_homepage') }}"><img id="logo" src="{{ asset('img/titre.png') }}" alt="test00" /></a>
+
+          <div class="menu-fix">
+            <ul id="menu">
+              <li><a href="{{ path('ceb_photo_homepage') }}">Galerie</a></li>
+              <li><a href="{{ path('ceb_present_homepage') }}">Presentation</a></li>
+              <li><a href="{{ path('ceb_goldbook_homepage') }}">Livre d'or</a></li>
+              <li><a href="{{ path('ceb_contact_contact') }}">Contact</a></li>
+              <li><a href="{{ path('ceb_partenaire_homepage') }}">partenaire</a></li>
+            </ul>
+          </div>  
+      </div>  
+
+      <div class="body">
+        {% block body %}
+        {% endblock %}
+      </div>
+      <div class="footage">
+
+        <footer>
+          <p>site en construction</p>
+        </footer>
+      </div>
+
+        {% block javascripts %}
+
+        {% endblock %}
+    </div>
+   
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/eye.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/utils.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/spacegallery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+  </body>
+</html>
