@@ -147,13 +147,19 @@ body {
 }
 
 .present {
-    position:relative;
+    margin-top:30px;
     top:30px;
     width:80%;
-    height:640px;
+    min-height:640px;
     opacity:0.65;
     margin:auto;
     background-color:white;
     border:5px solid #7ecbe4;
     border-radius:8px;
+}
+
+.test {
+    position:relative;
+    width:100px;
+    height:100px;
 }

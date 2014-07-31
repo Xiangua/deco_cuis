@@ -3875,15 +3875,9 @@ class appDevDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => '/usr/bin/java',
-<<<<<<< HEAD
-            'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
-            'assetic.ruby.bin' => '/usr/bin/ruby',
-            'assetic.sass.bin' => '/usr/bin/sass',
-=======
-            'assetic.node.bin' => '/usr/bin/node',
+            'assetic.node.bin' => 'c:\\Program Files\\nodejs\\\\node.EXE',
             'assetic.ruby.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\ruby.EXE',
             'assetic.sass.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\sass.BAT',
->>>>>>> 62c70b87f5944e71988bc8a6acfedb1eef339310
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(
 
