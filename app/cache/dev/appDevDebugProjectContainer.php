@@ -3862,7 +3862,11 @@ class appDevDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => '/usr/bin/java',
+<<<<<<< HEAD
             'assetic.node.bin' => '/usr/bin/node',
+=======
+            'assetic.node.bin' => 'c:\\Program Files\\nodejs\\\\node.EXE',
+>>>>>>> 89d8cff0450640f14938745d22ee853948498a13
             'assetic.ruby.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\ruby.EXE',
             'assetic.sass.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\sass.BAT',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',

@@ -436,7 +436,11 @@
     <parameter key="assetic.write_to">C:/wamp/www/deco_cuis/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
+<<<<<<< HEAD
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+=======
+    <parameter key="assetic.node.bin">c:\Program Files\nodejs\\node.EXE</parameter>
+>>>>>>> 89d8cff0450640f14938745d22ee853948498a13
     <parameter key="assetic.ruby.bin">c:\RailsInstaller\Ruby1.9.3\bin\ruby.EXE</parameter>
     <parameter key="assetic.sass.bin">c:\RailsInstaller\Ruby1.9.3\bin\sass.BAT</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>

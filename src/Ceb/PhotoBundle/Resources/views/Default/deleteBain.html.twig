@@ -1,8 +1,20 @@
-<h1> Selectionner une photo à supprimer <h1\>
-{% for Objet in Objets %}
-	{{'<br\><br\>'}}
-	<a href="{{ path('destroyBain', {'id': Objet.id}) }}" class="btn">
-    {{ Objet.name }}
-    {{'<br\>'}}
-    <img src={{ asset('images/bain/'~Objet.path|e) }}" alt="" />
-{% endfor %}
+{% extends "CebPhotoBundle::layout.html.twig" %}
+
+
+
+
+{% block cebphoto_body %}
+
+	<div class="present">
+		<p>Selectionner une photo à supprimer </p>
+		{% for Objet in Objets %}
+			{{'<br\><br\>'}}
+			<a href="{{ path('destroyBain', {'id': Objet.id}) }}" class="btn">
+		    {{ Objet.name }}
+		    {{'<br\>'}}
+		    <img class="test" src="{{ asset('images/bain/'~Objet.path|e) }}" alt="" />
+		{% endfor %}
+
+	</div>
+
+{% endblock %}
