@@ -15,7 +15,7 @@ ceb_photo_finition:
     defaults: { _controller: CebPhotoBundle:Default:finition }
 
 upload:
-    pattern:  /upload
+    pattern:  admin/upload
     defaults: { _controller: CebPhotoBundle:Default:upload }
 
 succes:

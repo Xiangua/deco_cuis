@@ -1,0 +1,7 @@
+parameters:
+#    ceb_user.example.class: Ceb\UserBundle\Example
+
+services:
+#    ceb_user.example:
+#        class: %ceb_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

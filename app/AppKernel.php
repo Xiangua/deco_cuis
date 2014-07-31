@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Ceb\PhotoBundle\CebPhotoBundle(),
             new Ceb\GoldbookBundle\CebGoldbookBundle(),
             new Ceb\AutreBundle\CebAutreBundle(),
+            new Ceb\UserBundle\CebUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

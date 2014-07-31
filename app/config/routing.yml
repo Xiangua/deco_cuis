@@ -1,3 +1,13 @@
+login:
+    pattern:   /admin/login
+    defaults:  { _controller: CebUserBundle:Security:login }
+
+login_check:
+    pattern:   /admin/login_check
+
+logout:
+    pattern:   /admin/logout
+
 ceb_autre:
     resource: "@CebAutreBundle/Resources/config/routing.yml"
     prefix:   /
@@ -9,4 +19,3 @@ ceb_goldbook:
 ceb_photo:
     resource: "@CebPhotoBundle/Resources/config/routing.yml"
     prefix:   /
-

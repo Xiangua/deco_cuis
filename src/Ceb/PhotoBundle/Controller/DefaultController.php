@@ -5,6 +5,7 @@ namespace Ceb\PhotoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ceb\PhotoBundle\Entity\Bain;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class DefaultController extends Controller
 {
@@ -29,6 +30,9 @@ class DefaultController extends Controller
     */
     public function uploadAction()
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux auteurs');
+        }
         $document = new Bain();
         $form = $this->createFormBuilder($document)
             ->add('name')

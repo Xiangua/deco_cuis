@@ -41,7 +41,7 @@ class __TwigTemplate_cac6aa6b1d9769a9bbe4e09176ae5ed128fac85023c5a02c13b4b47ffa8
     <img src=";
             // line 7
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(("images/bain/" . twig_escape_filter($this->env, $this->getAttribute((isset($context["Objet"]) ? $context["Objet"] : $this->getContext($context, "Objet")), "path")))), "html", null, true);
-            echo " \"alt=\"\" />
+            echo "\" alt=\"\" />
 ";
         }
         $_parent = $context['_parent'];

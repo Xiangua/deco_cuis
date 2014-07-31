@@ -135,6 +135,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/admin/log')) {
+            if (0 === strpos($pathinfo, '/admin/login')) {
+                // login
+                if ($pathinfo === '/admin/login') {
+                    return array (  '_controller' => 'Ceb\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                }
+
+                // login_check
+                if ($pathinfo === '/admin/login_check') {
+                    return array('_route' => 'login_check');
+                }
+
+            }
+
+            // logout
+            if ($pathinfo === '/admin/logout') {
+                return array('_route' => 'logout');
+            }
+
+        }
+
         // ceb_contact_contact
         if ($pathinfo === '/Contact') {
             return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ceb_contact_contact',);
@@ -182,7 +203,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // upload
-        if ($pathinfo === '/upload') {
+        if ($pathinfo === '/admin/upload') {
             return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'upload',);
         }
 

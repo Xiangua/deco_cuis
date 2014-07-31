@@ -4,5 +4,5 @@
 	<a href="{{ path('destroyBain', {'id': Objet.id}) }}" class="btn">
     {{ Objet.name }}
     {{'<br\>'}}
-    <img src={{ asset('images/bain/'~Objet.path|e) }} "alt="" />
+    <img src={{ asset('images/bain/'~Objet.path|e) }}" alt="" />
 {% endfor %}
