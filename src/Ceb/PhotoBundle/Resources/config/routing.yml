@@ -21,3 +21,15 @@ upload:
 succes:
     pattern:  /succes
     defaults: { _controller: CebPhotoBundle:Default:succes }
+
+succes:
+    pattern:  /erreur
+    defaults: { _controller: CebPhotoBundle:Default:erreur }
+
+deleteBain:
+    pattern:  /delete/bain
+    defaults: { _controller: CebPhotoBundle:Default:deleteBain }
+
+destroyBain:
+    pattern:  /delete/bain/{id}
+    defaults: { _controller: CebPhotoBundle:Default:DestroyBain }

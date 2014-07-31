@@ -44,16 +44,42 @@ class DefaultController extends Controller
                 $em->persist($document);
                 $em->flush();
 
-                return $this->redirect('succes');
+                return $this->forward('CebPhotoBundle:Default:succes', array('photo' => $document));
             }
         }
 
         return $this->render('CebPhotoBundle:Default:upload.html.twig', array('form' => $form->createView()));
     }
 
-    public function succesAction()
+    public function succesAction(Bain $photo)
     {
-        return $this->render('CebPhotoBundle:Default:succes.html.twig');
+        if ($photo === null) {
+            return $this->render('CebPhotoBundle:Default:error.html.twig');
+        }
+        return $this->render('CebPhotoBundle:Default:succes.html.twig', array('photo' => $photo));
     }
 
+    public function erreurAction()
+    {
+        return $this->render('CebPhotoBundle:Default:error.html.twig');
+    }
+    
+    public function deleteBainAction()
+    {
+        $em = $this->getDoctrine()
+               ->getManager();
+
+        $Objets = $em->getRepository('CebPhotoBundle:Bain')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:deleteBain.html.twig', array('Objets' => $Objets));
+    }
+
+    public function destroyBainAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $Objet = $em->getRepository('CebPhotoBundle:Bain')->find($id);
+        $em->remove($Objet);
+        $em->flush();
+        return $this->forward('CebPhotoBundle:Default:deleteBain');
+    }
 }

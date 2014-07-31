@@ -79,6 +79,11 @@
   'DoctrineBundle:Collector:explain.html.twig' => 'C:\\wamp\\www\\deco_cuis\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views/Collector/explain.html.twig',
   'CebPhotoBundle:Default:bain.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/bain.html.twig',
   'CebPhotoBundle:Default:cuisine.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/cuisine.html.twig',
+<<<<<<< HEAD
+=======
+  'CebPhotoBundle:Default:deleteBain.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/deleteBain.html.twig',
+  'CebPhotoBundle:Default:error.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/error.html.twig',
+>>>>>>> 62c70b87f5944e71988bc8a6acfedb1eef339310
   'CebPhotoBundle:Default:finition.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/finition.html.twig',
   'CebPhotoBundle:Default:index.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/index.html.twig',
   'CebPhotoBundle:Default:succes.html.twig' => 'C:\\wamp\\www\\deco_cuis\\src\\Ceb\\PhotoBundle/Resources/views/Default/succes.html.twig',
