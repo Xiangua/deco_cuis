@@ -1,7 +1,15 @@
-<h1>Upload File</h1>
+{% extends "CebPhotoBundle::layout.html.twig" %}
 
-<form action="#" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
+{% block cebphoto_body %}
 
-    <input type="submit" value="Upload Document" />
-</form>
+	<div class="present">
+		<p>met tes photos sur le site</p>
+
+		<form action="#" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+
+	    <input type="submit" value="Upload Document" />
+		</form>
+	</div>
+
+{% endblock %}
