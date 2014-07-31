@@ -3426,7 +3426,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => 'C:/wamp/www/deco_cuis/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => 'C:/wamp/www/deco_cuis/app/cache/dev',
             'kernel.logs_dir' => 'C:/wamp/www/deco_cuis/app/logs',
             'kernel.bundles' => array(
@@ -3876,8 +3876,8 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.java.bin' => '/usr/bin/java',
             'assetic.node.bin' => '/usr/bin/node',
-            'assetic.ruby.bin' => '/usr/bin/ruby',
-            'assetic.sass.bin' => '/usr/bin/sass',
+            'assetic.ruby.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\ruby.EXE',
+            'assetic.sass.bin' => 'c:\\RailsInstaller\\Ruby1.9.3\\bin\\sass.BAT',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(
 

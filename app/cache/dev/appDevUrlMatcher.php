@@ -187,8 +187,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // succes
-        if ($pathinfo === '/succes') {
-            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::succesAction',  '_route' => 'succes',);
+        if ($pathinfo === '/erreur') {
+            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::erreurAction',  '_route' => 'succes',);
+        }
+
+        if (0 === strpos($pathinfo, '/delete/bain')) {
+            // deleteBain
+            if ($pathinfo === '/delete/bain') {
+                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::deleteBainAction',  '_route' => 'deleteBain',);
+            }
+
+            // destroyBain
+            if (preg_match('#^/delete/bain/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyBain')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyBainAction',));
+            }
+
         }
 
         // _welcome

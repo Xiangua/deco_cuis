@@ -1,0 +1,8 @@
+<h1> Selectionner une photo à supprimer <h1\>
+{% for Objet in Objets %}
+	{{'<br\><br\>'}}
+	<a href="{{ path('destroyBain', {'id': Objet.id}) }}" class="btn">
+    {{ Objet.name }}
+    {{'<br\>'}}
+    <img src={{ asset('images/bain/'~Objet.path|e) }} "alt="" />
+{% endfor %}
