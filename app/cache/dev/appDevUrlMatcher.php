@@ -181,6 +181,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // upload
+        if ($pathinfo === '/upload') {
+            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'upload',);
+        }
+
+        // succes
+        if ($pathinfo === '/succes') {
+            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::succesAction',  '_route' => 'succes',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

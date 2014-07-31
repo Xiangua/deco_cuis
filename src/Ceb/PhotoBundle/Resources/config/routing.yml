@@ -14,3 +14,10 @@ ceb_photo_finition:
     pattern:  /photofinition
     defaults: { _controller: CebPhotoBundle:Default:finition }
 
+upload:
+    pattern:  /upload
+    defaults: { _controller: CebPhotoBundle:Default:upload }
+
+succes:
+    pattern:  /succes
+    defaults: { _controller: CebPhotoBundle:Default:succes }
