@@ -4,3 +4,10 @@ Votre photos à été ajouté avec succès!
 {{photo.name}}
 <br>
 <img src="{{ asset('images/bain/'~photo.path|e) }}" alt="" />
+			<li><a href="{{ path('ceb_photo_homepage') }}">Travaux fini</a></li>
+			<li><a href="{{ path('ceb_photo_cuisine') }}">Cuisine</a></li>
+		    <li><a href="{{ path('ceb_photo_bain') }}">Bain</a></li>
+		    <li><a href="{{ path('ceb_photo_finition') }}">finition</a></li>
+		    {% if is_granted('ROLE_ADMIN') %}
+  				<li><a href="{{ path('uploadbain') }}">Ajouter une photo dans : bains</a></li>
+			{% endif %}

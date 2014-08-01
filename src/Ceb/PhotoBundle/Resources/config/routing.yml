@@ -14,22 +14,22 @@ ceb_photo_finition:
     pattern:  /photofinition
     defaults: { _controller: CebPhotoBundle:Default:finition }
 
-upload:
-    pattern:  admin/upload
-    defaults: { _controller: CebPhotoBundle:Default:upload }
+uploadbain:
+    pattern:  /admin/upload/bain
+    defaults: { _controller: CebPhotoBundle:Default:uploadBain }
 
 succes:
-    pattern:  /succes
+    pattern:  /admin/succes
     defaults: { _controller: CebPhotoBundle:Default:succes }
 
 succes:
-    pattern:  /erreur
+    pattern:  /admin/erreur
     defaults: { _controller: CebPhotoBundle:Default:erreur }
 
 deleteBain:
-    pattern:  /delete/bain
+    pattern:  /admin/delete/bain
     defaults: { _controller: CebPhotoBundle:Default:deleteBain }
 
 destroyBain:
-    pattern:  /delete/bain/{id}
+    pattern:  /admin/delete/bain/{id}
     defaults: { _controller: CebPhotoBundle:Default:DestroyBain }

@@ -1,6 +1,9 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm:           sha512
+            encode_as_base64:    false
+            iterations:          1
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -10,7 +13,7 @@ security:
         in_memory:
             memory:
                 users:
-                    totof: { password: totof, roles: [ 'ROLE_ADMIN' ] }
+                    totof: { password: 639ae720e26ad91930c67531c7735f55e33f300970b3887aaa499acb3a5c78c1d17abbc4edd2e66ea2b95c5c124d2520a1163d0f1cc28b956e3bc02324bc20d2, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -23,6 +26,8 @@ security:
             provider:  in_memory
             form_login:
                 login_path: login
+                always_use_default_target_path: true
+                default_target_path: /admin/upload/bain
                 check_path: login_check
                 username_parameter:             _username
                 password_parameter:             _password

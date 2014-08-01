@@ -19,7 +19,12 @@ class DefaultController extends Controller
     }
     public function bainAction()
     {
-        return $this->render('CebPhotoBundle:Default:bain.html.twig');
+        $em = $this->getDoctrine()
+               ->getManager();
+
+        $Objets = $em->getRepository('CebPhotoBundle:Bain')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:bain.html.twig', array('Objets' => $Objets));
     }
     public function finitionAction()
     {
@@ -28,10 +33,10 @@ class DefaultController extends Controller
     /**
     * @Template()
     */
-    public function uploadAction()
+    public function uploadBainAction()
     {
         if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            throw new AccessDeniedHttpException('Accès limité aux auteurs');
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
         }
         $document = new Bain();
         $form = $this->createFormBuilder($document)
@@ -57,6 +62,9 @@ class DefaultController extends Controller
 
     public function succesAction(Bain $photo)
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
         if ($photo === null) {
             return $this->render('CebPhotoBundle:Default:error.html.twig');
         }
@@ -65,11 +73,18 @@ class DefaultController extends Controller
 
     public function erreurAction()
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
         return $this->render('CebPhotoBundle:Default:error.html.twig');
     }
     
     public function deleteBainAction()
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
+
         $em = $this->getDoctrine()
                ->getManager();
 
@@ -80,6 +95,10 @@ class DefaultController extends Controller
 
     public function destroyBainAction($id)
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
+
         $em = $this->getDoctrine()->getManager();
         $Objet = $em->getRepository('CebPhotoBundle:Bain')->find($id);
         $em->remove($Objet);

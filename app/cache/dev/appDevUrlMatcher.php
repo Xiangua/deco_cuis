@@ -202,25 +202,28 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // upload
-        if ($pathinfo === '/admin/upload') {
-            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'upload',);
-        }
-
-        // succes
-        if ($pathinfo === '/erreur') {
-            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::erreurAction',  '_route' => 'succes',);
-        }
-
-        if (0 === strpos($pathinfo, '/delete/bain')) {
-            // deleteBain
-            if ($pathinfo === '/delete/bain') {
-                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::deleteBainAction',  '_route' => 'deleteBain',);
+        if (0 === strpos($pathinfo, '/admin')) {
+            // uploadbain
+            if ($pathinfo === '/admin/upload/bain') {
+                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::uploadBainAction',  '_route' => 'uploadbain',);
             }
 
-            // destroyBain
-            if (preg_match('#^/delete/bain/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyBain')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyBainAction',));
+            // succes
+            if ($pathinfo === '/admin/erreur') {
+                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::erreurAction',  '_route' => 'succes',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/delete/bain')) {
+                // deleteBain
+                if ($pathinfo === '/admin/delete/bain') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::deleteBainAction',  '_route' => 'deleteBain',);
+                }
+
+                // destroyBain
+                if (preg_match('#^/admin/delete/bain/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyBain')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyBainAction',));
+                }
+
             }
 
         }
