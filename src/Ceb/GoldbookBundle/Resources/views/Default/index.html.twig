@@ -4,6 +4,22 @@
 
 {% block cebphoto_body %}
 
+	<div class="present">
+		<p>Veuillez entrer un pseudo, une adresse e-mail, ainsi que votre message.</p>
 
+		<form action="#" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+
+	    <input type="submit" value="Upload Post" />
+		</form>
+	</div>
+
+	{% for Objet in Objets %}
+			{{'<br\><br\>'}}
+		    {{ Objet.pseudo }}
+		    {{ Objet.date|date('Y-m-d') }}
+		    {{ Objet.message }}
+		    {{'<br\>'}}
+	{% endfor %}
 
 {% endblock %}

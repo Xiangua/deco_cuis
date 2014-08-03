@@ -36,6 +36,7 @@ class Cuisine
     
     /**
      * @Assert\File(maxSize="60000000")
+     * @Assert\NotBlank
      */
     public $file;
 
