@@ -135,93 +135,152 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/admin/log')) {
-            if (0 === strpos($pathinfo, '/admin/login')) {
-                // login
-                if ($pathinfo === '/admin/login') {
-                    return array (  '_controller' => 'Ceb\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
-                }
+        if (0 === strpos($pathinfo, '/admin')) {
+            // login
+            if ($pathinfo === '/admin') {
+                return array (  '_controller' => 'Ceb\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+            }
 
+            if (0 === strpos($pathinfo, '/admin/log')) {
                 // login_check
                 if ($pathinfo === '/admin/login_check') {
                     return array('_route' => 'login_check');
                 }
 
-            }
+                // logout
+                if ($pathinfo === '/admin/logout') {
+                    return array('_route' => 'logout');
+                }
 
-            // logout
-            if ($pathinfo === '/admin/logout') {
-                return array('_route' => 'logout');
             }
 
         }
 
-        // ceb_contact_contact
-        if ($pathinfo === '/Contact') {
-            return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ceb_contact_contact',);
-        }
+        if (0 === strpos($pathinfo, '/No')) {
+            // ceb_contact_contact
+            if ($pathinfo === '/Nous-contacter') {
+                return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ceb_contact_contact',);
+            }
 
-        if (0 === strpos($pathinfo, '/p')) {
             // ceb_partenaire_homepage
-            if ($pathinfo === '/partenaires') {
+            if ($pathinfo === '/Nos-partenaires') {
                 return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::partenaireAction',  '_route' => 'ceb_partenaire_homepage',);
             }
 
-            // ceb_present_homepage
-            if ($pathinfo === '/present') {
-                return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::presentationAction',  '_route' => 'ceb_present_homepage',);
-            }
+        }
 
+        // ceb_present_homepage
+        if ($pathinfo === '/Presentation-entreprise') {
+            return array (  '_controller' => 'Ceb\\AutreBundle\\Controller\\DefaultController::presentationAction',  '_route' => 'ceb_present_homepage',);
         }
 
         // ceb_goldbook_homepage
-        if ($pathinfo === '/gold') {
+        if ($pathinfo === '/Livre-d\'or') {
             return array (  '_controller' => 'Ceb\\GoldbookBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ceb_goldbook_homepage',);
         }
 
-        // ceb_photo_homepage
-        if ($pathinfo === '/home') {
-            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ceb_photo_homepage',);
-        }
+        if (0 === strpos($pathinfo, '/Travaux-')) {
+            // ceb_photo_homepage
+            if ($pathinfo === '/Travaux-finis') {
+                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::Travaux_finiAction',  '_route' => 'ceb_photo_homepage',);
+            }
 
-        if (0 === strpos($pathinfo, '/photo')) {
             // ceb_photo_cuisine
-            if ($pathinfo === '/photocuisine') {
+            if ($pathinfo === '/Travaux-cuisines') {
                 return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::cuisineAction',  '_route' => 'ceb_photo_cuisine',);
             }
 
             // ceb_photo_bain
-            if ($pathinfo === '/photobain') {
+            if ($pathinfo === '/Travaux-bains') {
                 return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::bainAction',  '_route' => 'ceb_photo_bain',);
-            }
-
-            // ceb_photo_finition
-            if ($pathinfo === '/photofinition') {
-                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::finitionAction',  '_route' => 'ceb_photo_finition',);
             }
 
         }
 
+        // ceb_photo_finition
+        if ($pathinfo === '/Details-des-finitions') {
+            return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::finitionAction',  '_route' => 'ceb_photo_finition',);
+        }
+
         if (0 === strpos($pathinfo, '/admin')) {
-            // uploadbain
-            if ($pathinfo === '/admin/upload/bain') {
-                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::uploadBainAction',  '_route' => 'uploadbain',);
-            }
-
-            // succes
-            if ($pathinfo === '/admin/erreur') {
-                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::erreurAction',  '_route' => 'succes',);
-            }
-
-            if (0 === strpos($pathinfo, '/admin/delete/bain')) {
-                // deleteBain
-                if ($pathinfo === '/admin/delete/bain') {
-                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::deleteBainAction',  '_route' => 'deleteBain',);
+            if (0 === strpos($pathinfo, '/admin/upload')) {
+                // uploadtravaux_fini
+                if ($pathinfo === '/admin/upload/travaux_fini') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::uploadtravaux_finiAction',  '_route' => 'uploadtravaux_fini',);
                 }
 
-                // destroyBain
-                if (preg_match('#^/admin/delete/bain/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyBain')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyBainAction',));
+                // uploadcuisine
+                if ($pathinfo === '/admin/upload/cuisine') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::uploadcuisineAction',  '_route' => 'uploadcuisine',);
+                }
+
+                // uploadbain
+                if ($pathinfo === '/admin/upload/bain') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::uploadbainAction',  '_route' => 'uploadbain',);
+                }
+
+                // uploadfinition
+                if ($pathinfo === '/admin/upload/finition') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::uploadfinitionAction',  '_route' => 'uploadfinition',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/succes')) {
+                // succestravaux_fini
+                if ($pathinfo === '/admin/succestravaux_fini') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::succestravaux_finiAction',  '_route' => 'succestravaux_fini',);
+                }
+
+                // succescuisine
+                if ($pathinfo === '/admin/succescuisine') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::succescuisineAction',  '_route' => 'succescuisine',);
+                }
+
+                // succesbain
+                if ($pathinfo === '/admin/succesbain') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::succesbainAction',  '_route' => 'succesbain',);
+                }
+
+                // succesfinition
+                if ($pathinfo === '/admin/succesfinition') {
+                    return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\AdmController::succesfinitionAction',  '_route' => 'succesfinition',);
+                }
+
+            }
+
+            // erreur_photo
+            if ($pathinfo === '/admin/erreur') {
+                return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::erreurAction',  '_route' => 'erreur_photo',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/delete')) {
+                if (0 === strpos($pathinfo, '/admin/delete/bain')) {
+                    // deleteBain
+                    if ($pathinfo === '/admin/delete/bain') {
+                        return array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::deleteBainAction',  '_route' => 'deleteBain',);
+                    }
+
+                    // destroyBain
+                    if (preg_match('#^/admin/delete/bain/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyBain')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyBainAction',));
+                    }
+
+                }
+
+                // destroyCuisine
+                if (0 === strpos($pathinfo, '/admin/delete/cuisine') && preg_match('#^/admin/delete/cuisine/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyCuisine')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyCuisineAction',));
+                }
+
+                // destroyFinition
+                if (0 === strpos($pathinfo, '/admin/delete/finition') && preg_match('#^/admin/delete/finition/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyFinition')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyFinitionAction',));
+                }
+
+                // destroyTravau
+                if (0 === strpos($pathinfo, '/admin/delete/travau') && preg_match('#^/admin/delete/travau/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'destroyTravau')), array (  '_controller' => 'Ceb\\PhotoBundle\\Controller\\DefaultController::DestroyTravauAction',));
                 }
 
             }

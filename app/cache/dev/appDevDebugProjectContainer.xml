@@ -436,7 +436,7 @@
     <parameter key="assetic.write_to">C:/wamp/www/deco_cuis/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
@@ -1657,7 +1657,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>53dbb9bfa7d71</argument>
+            <argument>53dc9a9ae7a81</argument>
           </service>
         </argument>
       </argument>
@@ -1861,7 +1861,7 @@
                 <argument type="collection">
                   <argument key="login_path">login</argument>
                   <argument key="always_use_default_target_path">true</argument>
-                  <argument key="default_target_path">/admin/upload/bain</argument>
+                  <argument key="default_target_path">/admin/upload/travaux_fini</argument>
                   <argument key="target_path_parameter">_target_path</argument>
                   <argument key="use_referer">false</argument>
                 </argument>
@@ -1906,7 +1906,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>53dbb9bfa7d71</argument>
+            <argument>53dc9a9ae7a81</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>

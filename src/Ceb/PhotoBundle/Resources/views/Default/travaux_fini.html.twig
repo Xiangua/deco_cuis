@@ -1,0 +1,19 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/index.html.twig #}
+
+{% extends "CebPhotoBundle::layout.html.twig" %}
+
+
+{% block cebphoto_body %}
+
+<h2 id="titre">Les derniers travaux</h2>
+
+	<div id="myGallery" class="spacegallery">
+
+		{% for Objet in Objets %}
+		    <img src="{{ asset('images/travaux_fini/'~Objet.path) }}" alt="{{Objet.name}}" />
+		{% endfor %}
+		
+
+	</div>
+
+{% endblock %}

@@ -1,3 +1,3 @@
 ceb_goldbook_homepage:
-    pattern:  /gold
+    pattern:  /Livre-d'or
     defaults: { _controller: CebGoldbookBundle:Default:index }

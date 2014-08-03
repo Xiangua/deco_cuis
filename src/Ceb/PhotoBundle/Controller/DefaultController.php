@@ -3,19 +3,32 @@
 namespace Ceb\PhotoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Ceb\PhotoBundle\Entity\Travauxfini;
+use Ceb\PhotoBundle\Entity\Cuisine;
 use Ceb\PhotoBundle\Entity\Bain;
+use Ceb\PhotoBundle\Entity\Finition;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function Travaux_finiAction()
     {
-        return $this->render('CebPhotoBundle:Default:index.html.twig');
+            $em = $this->getDoctrine()
+               ->getManager();
+
+        $Objets = $em->getRepository('CebPhotoBundle:Travauxfini')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:travaux_fini.html.twig', array('Objets' => $Objets));
     }
     public function cuisineAction()
     {
-        return $this->render('CebPhotoBundle:Default:cuisine.html.twig');
+            $em = $this->getDoctrine()
+               ->getManager();
+
+        $Objets = $em->getRepository('CebPhotoBundle:Cuisine')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:cuisine.html.twig', array('Objets' => $Objets));
     }
     public function bainAction()
     {
@@ -28,7 +41,12 @@ class DefaultController extends Controller
     }
     public function finitionAction()
     {
-        return $this->render('CebPhotoBundle:Default:finition.html.twig');
+        $em = $this->getDoctrine()
+               ->getManager();
+
+        $Objets = $em->getRepository('CebPhotoBundle:finition')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:finition.html.twig', array('Objets' => $Objets));
     }
     /**
     * @Template()
@@ -60,17 +78,6 @@ class DefaultController extends Controller
         return $this->render('CebPhotoBundle:Default:upload.html.twig', array('form' => $form->createView()));
     }
 
-    public function succesAction(Bain $photo)
-    {
-        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            throw new AccessDeniedHttpException('Accès limité aux admins!');
-        }
-        if ($photo === null) {
-            return $this->render('CebPhotoBundle:Default:error.html.twig');
-        }
-        return $this->render('CebPhotoBundle:Default:succes.html.twig', array('photo' => $photo));
-    }
-
     public function erreurAction()
     {
         if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
@@ -88,9 +95,15 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()
                ->getManager();
 
-        $Objets = $em->getRepository('CebPhotoBundle:Bain')
+        $Bains = $em->getRepository('CebPhotoBundle:Bain')
                              ->findAll();
-        return $this->render('CebPhotoBundle:Default:deleteBain.html.twig', array('Objets' => $Objets));
+        $Cuisines = $em->getRepository('CebPhotoBundle:Cuisine')
+                             ->findAll();
+        $Finitions = $em->getRepository('CebPhotoBundle:Finition')
+                             ->findAll();
+        $Travaus = $em->getRepository('CebPhotoBundle:Travauxfini')
+                             ->findAll();
+        return $this->render('CebPhotoBundle:Default:deleteBain.html.twig', array('Bains' => $Bains, 'Cuisines' => $Cuisines, 'Finitions' => $Finitions, 'Travaus' => $Travaus));
     }
 
     public function destroyBainAction($id)
@@ -101,6 +114,45 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $Objet = $em->getRepository('CebPhotoBundle:Bain')->find($id);
+        $em->remove($Objet);
+        $em->flush();
+        return $this->forward('CebPhotoBundle:Default:deleteBain');
+    }
+
+    public function destroyCuisineAction($id)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $Objet = $em->getRepository('CebPhotoBundle:Cuisine')->find($id);
+        $em->remove($Objet);
+        $em->flush();
+        return $this->forward('CebPhotoBundle:Default:deleteBain');
+    }
+
+    public function destroyTravauAction($id)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $Objet = $em->getRepository('CebPhotoBundle:Travauxfini')->find($id);
+        $em->remove($Objet);
+        $em->flush();
+        return $this->forward('CebPhotoBundle:Default:deleteBain');
+    }
+
+    public function destroyFinitionAction($id)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedHttpException('Accès limité aux admins!');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $Objet = $em->getRepository('CebPhotoBundle:Finition')->find($id);
         $em->remove($Objet);
         $em->flush();
         return $this->forward('CebPhotoBundle:Default:deleteBain');

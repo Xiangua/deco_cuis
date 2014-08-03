@@ -1,19 +1,63 @@
-{% extends "CebPhotoBundle::layout.html.twig" %}
+{% extends "::layout.html.twig" %}
 
 
 
 
-{% block cebphoto_body %}
+{% block body %}
 
-	<div class="present">
-		<p>Selectionner une photo à supprimer </p>
-		{% for Objet in Objets %}
-			{{'<br\><br\>'}}
-			<a href="{{ path('destroyBain', {'id': Objet.id}) }}" class="btn">
-		    {{ Objet.name }}
-		    {{'<br\>'}}
-		    <img class="test" src="{{ asset('images/bain/'~Objet.path|e) }}" alt="" />
-		{% endfor %}
+	<div class="admin">
+		<div class="menu-photo">
+			<ul id="nav">
+				<li><a href="{{ path('uploadtravaux_fini') }}">Ajouts photos</a></li>
+				<li><a href="{{ path('ceb_goldbook_homepage') }}">Mod. livre d'or</a></li>
+				<li><a href="{{ path('logout') }}">Deconnexion</a></li>
+			</ul>
+		</div>
+
+		<br />
+		<table class="supp">
+			<tr>
+				<td>Travaux Fini</td>
+				{% for Travau in Travaus %}
+					<td>
+						<a href="{{ path('destroyTravau', {'id': Travau.id}) }}" class="btn">
+					    <p>Supprimer</p>
+					    <img class="test" src="{{ asset('images/travaux_fini/'~Travau.path|e) }}" alt="" />
+					</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<td>Bain</td>
+				{% for Bain in Bains %}
+					<td>
+						<a href="{{ path('destroyBain', {'id': Bain.id}) }}" class="btn">
+					    <p>Supprimer</p>
+					    <img class="test" src="{{ asset('images/bain/'~Bain.path|e) }}" alt="" />
+					</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<td>Cuisine</td>
+				{% for Cuisine in Cuisines %}
+					<td>
+						<a href="{{ path('destroyCuisine', {'id': Cuisine.id}) }}" class="btn">
+					    <p>Supprimer</p>
+					    <img class="test" src="{{ asset('images/Cuisine/'~Cuisine.path|e) }}" alt="" />
+					</td>
+				{% endfor %}
+			</tr>
+			<tr>
+				<td>Finition</td>
+				{% for Finition in Finitions %}
+					<td>
+						<a href="{{ path('destroyFinition', {'id': Finition.id}) }}" class="btn">
+					    <p>Supprimer</p>
+					    <img class="test" src="{{ asset('images/finition/'~Finition.path|e) }}" alt="" />
+					</td>
+				{% endfor %}
+			</tr>
+
+		</table>
 
 	</div>
 

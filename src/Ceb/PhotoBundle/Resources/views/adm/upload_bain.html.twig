@@ -1,0 +1,40 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+
+	<div class="admin">
+
+	<div class="menu-photo">
+		<ul id="nav">
+			<li><a href="{{ path('deleteBain') }}">Suppressions photos</a></li>
+			<li><a href="{{ path('ceb_goldbook_homepage') }}">Mod. livre d'or</a></li>
+			<li><a href="{{ path('logout') }}">Deconnexion</a></li>
+		</ul>
+	</div>
+
+	<br />
+	<div class="menu-adm">
+		<ul id="nav-adm">
+			<li><a href="{{ path('uploadtravaux_fini') }}">Photo travaux fini</a></li>
+			<li><a href="{{ path('uploadcuisine') }}">Photo cuisine</a></li>
+			<li><a href="{{ path('uploadfinition') }}">Photo finition</a></li>
+		</ul>
+	</div>
+
+	<br />
+
+		<div class="upload-photo">
+
+			<h3>Photo des salles de bains</h3>
+
+			<form action="#" method="post" {{ form_enctype(form) }}>
+		    {{ form_widget(form) }}
+
+		    <input type="submit" value="Upload Photo" />
+			</form>
+
+		</div>
+		
+	</div>
+
+{% endblock %}

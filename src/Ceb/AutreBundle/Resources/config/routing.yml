@@ -1,11 +1,11 @@
 ceb_contact_contact:
-    pattern:  /Contact
+    pattern:  /Nous-contacter
     defaults: { _controller: CebAutreBundle:Default:contact }
 
 ceb_partenaire_homepage:
-    pattern:   /partenaires
+    pattern:   /Nos-partenaires
     defaults: { _controller: CebAutreBundle:Default:partenaire }
 
 ceb_present_homepage:
-    pattern:   /present
+    pattern:   /Presentation-entreprise
     defaults: { _controller: CebAutreBundle:Default:presentation }

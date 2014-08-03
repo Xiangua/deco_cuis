@@ -147,6 +147,7 @@ body {
 }
 
 .present {
+    position:relative;
     margin-top:30px;
     top:30px;
     width:80%;
@@ -160,6 +161,84 @@ body {
 
 .test {
     position:relative;
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
+}
+
+.login {
+    position:relative;
+    top:100px;
+    width:400px;
+    height:80px;
+    border:3px solid #7ecbe4;
+    border-radius:8px;
+    background-color:white;
+    margin:auto;
+}
+
+.upload-photo {
+    position:relative;
+    top:100px;
+    width:400px;
+    height:150px;
+    border:3px solid #7ecbe4;
+    border-radius:8px;
+    background-color:white;
+    margin:auto;
+}
+
+.admin {
+    position:relative;
+    margin-top:30px;
+    margin-bottom:100px;
+    width:80%;
+    min-height:640px;
+    margin:auto;
+    background-color:white;
+    border:5px solid #7ecbe4;
+    border-radius:8px;
+}
+
+#nav-adm li {
+    position:relative;
+    list-style:none;
+    float: left ;
+    width:180px;
+    border: 2px solid black ;
+    margin-left:10px;
+}
+
+#nav-adm li a {
+    display:block;
+    background:white;
+    text-decoration:none; 
+    color: black;
+    font: 1.2em "Trebuchet MS",Arial,sans-serif ;
+    line-height: 1em ;
+    padding: 3px 0 ;
+    text-align: center ;
+    border-radius:8px;
+}
+
+.menu-adm {
+    position:relative;
+    top:50px;
+    left:100px;
+    margin:auto;
+}
+
+.titre {
+    font-size:20px;
+    text-align:center;
+    
+}
+
+.supp {
+
+    position:relative;
+    margin-top:30px;
+}
+
+.supp td {
+    border: 1px solid black;
 }

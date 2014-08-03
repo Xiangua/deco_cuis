@@ -42,7 +42,7 @@ class __TwigTemplate_268ad51a9049d9272ab807a0ed7b26a2a05ba6cec5a7025f2900b91b7fa
       <div class=\"head\">
       <a href=\"";
         // line 19
-        echo $this->env->getExtension('routing')->getPath("ceb_photo_homepage");
+        echo $this->env->getExtension('routing')->getPath("ceb_present_homepage");
         echo "\"><img id=\"logo\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/titre.png"), "html", null, true);
         echo "\" alt=\"test00\" /></a>
@@ -112,6 +112,7 @@ class __TwigTemplate_268ad51a9049d9272ab807a0ed7b26a2a05ba6cec5a7025f2900b91b7fa
         // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
+    
   </body>
 </html>";
     }
@@ -163,6 +164,6 @@ class __TwigTemplate_268ad51a9049d9272ab807a0ed7b26a2a05ba6cec5a7025f2900b91b7fa
 
     public function getDebugInfo()
     {
-        return array (  150 => 44,  147 => 43,  143 => 34,  140 => 33,  134 => 12,  129 => 11,  126 => 10,  120 => 8,  113 => 52,  109 => 51,  105 => 50,  101 => 49,  97 => 48,  93 => 46,  91 => 43,  79 => 33,  70 => 27,  66 => 26,  62 => 25,  58 => 24,  54 => 23,  45 => 19,  38 => 14,  36 => 10,  23 => 2,  81 => 35,  78 => 24,  73 => 26,  71 => 24,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  43 => 10,  40 => 9,  33 => 6,  30 => 5,  41 => 9,  37 => 8,  31 => 8,  28 => 3,);
+        return array (  151 => 44,  148 => 43,  144 => 34,  141 => 33,  135 => 12,  130 => 11,  127 => 10,  121 => 8,  113 => 52,  109 => 51,  105 => 50,  101 => 49,  97 => 48,  93 => 46,  91 => 43,  79 => 33,  70 => 27,  66 => 26,  62 => 25,  58 => 24,  54 => 23,  45 => 19,  36 => 10,  23 => 2,  81 => 35,  77 => 30,  65 => 21,  61 => 20,  57 => 19,  46 => 11,  42 => 10,  38 => 14,  31 => 8,  28 => 3,);
     }
 }

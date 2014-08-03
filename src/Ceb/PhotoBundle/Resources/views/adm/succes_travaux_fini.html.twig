@@ -1,0 +1,24 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+	<div class="admin">
+			
+			<font class="titre">Votre photos à été ajouté avec succès dans la section Travaux fini!</font><br />
+
+
+			Texte de l'image:<br />
+			{{photo.name}}
+		
+	    	{% if is_granted('ROLE_ADMIN') %}
+	    		<div class="nav">
+	    			<ul id="nav-adm">
+						<li><a href="{{ path('uploadtravaux_fini') }}">nouvelle Photo</a></li>
+					</ul>
+				</div>
+			{% endif %}
+
+			<img src="{{ asset('images/travaux_fini/'~photo.path|e) }}" alt="" />
+
+	</div>
+
+{% endblock %}

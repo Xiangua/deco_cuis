@@ -3,15 +3,13 @@
 
 {% block cebphoto_body %}
 
-<h1 id="titre">finition</h1>
+<h2 id="titre">Les details qui changent tout!</h2>
 
 	<div id="myGallery" class="spacegallery">
 
-		<img src="{{ asset('img/salle00.jpg') }}" alt="test00" />
-		<img src="{{ asset('img/salle01.jpg') }}" alt="test01" />
-		<img src="{{ asset('img/salle02.jpg') }}" alt="test02" />
-		<img src="{{ asset('img/salle03.jpg') }}" alt="test03" />
-		<img src="{{ asset('img/salle04.jpg') }}" alt="test04" />
+		{% for Objet in Objets %}
+		    <img src="{{ asset('images/finition/'~Objet.path) }}" alt="{{Objet.name}}" />
+		{% endfor %}
 		
 
 	</div>

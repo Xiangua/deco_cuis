@@ -1,5 +1,5 @@
 login:
-    pattern:   /admin/login
+    pattern:   /admin
     defaults:  { _controller: CebUserBundle:Security:login }
 
 login_check:

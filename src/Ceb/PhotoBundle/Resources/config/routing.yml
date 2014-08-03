@@ -1,28 +1,52 @@
 ceb_photo_homepage:
-    pattern:  /home
-    defaults: { _controller: CebPhotoBundle:Default:index }
+    pattern:  /Travaux-finis
+    defaults: { _controller: CebPhotoBundle:Default:Travaux_fini }
 
 ceb_photo_cuisine:
-    pattern:  /photocuisine
+    pattern:  /Travaux-cuisines
     defaults: { _controller: CebPhotoBundle:Default:cuisine }
 
 ceb_photo_bain:
-    pattern:  /photobain
+    pattern:  /Travaux-bains
     defaults: { _controller: CebPhotoBundle:Default:bain }
 
 ceb_photo_finition:
-    pattern:  /photofinition
+    pattern:  /Details-des-finitions
     defaults: { _controller: CebPhotoBundle:Default:finition }
+
+uploadtravaux_fini:
+    pattern:  /admin/upload/travaux_fini
+    defaults: { _controller: CebPhotoBundle:Adm:uploadtravaux_fini }
+
+uploadcuisine:
+    pattern:  /admin/upload/cuisine
+    defaults: { _controller: CebPhotoBundle:Adm:uploadcuisine }
 
 uploadbain:
     pattern:  /admin/upload/bain
-    defaults: { _controller: CebPhotoBundle:Default:uploadBain }
+    defaults: { _controller: CebPhotoBundle:Adm:uploadbain }
 
-succes:
-    pattern:  /admin/succes
-    defaults: { _controller: CebPhotoBundle:Default:succes }
+uploadfinition:
+    pattern:  /admin/upload/finition
+    defaults: { _controller: CebPhotoBundle:Adm:uploadfinition }
 
-succes:
+succestravaux_fini:
+    pattern:  /admin/succestravaux_fini
+    defaults: { _controller: CebPhotoBundle:Adm:succestravaux_fini }
+
+succescuisine:
+    pattern:  /admin/succescuisine
+    defaults: { _controller: CebPhotoBundle:Adm:succescuisine }
+
+succesbain:
+    pattern:  /admin/succesbain
+    defaults: { _controller: CebPhotoBundle:Adm:succesbain }
+
+succesfinition:
+    pattern:  /admin/succesfinition
+    defaults: { _controller: CebPhotoBundle:Adm:succesfinition }
+
+erreur_photo:
     pattern:  /admin/erreur
     defaults: { _controller: CebPhotoBundle:Default:erreur }
 
@@ -33,3 +57,15 @@ deleteBain:
 destroyBain:
     pattern:  /admin/delete/bain/{id}
     defaults: { _controller: CebPhotoBundle:Default:DestroyBain }
+
+destroyCuisine:
+    pattern:  /admin/delete/cuisine/{id}
+    defaults: { _controller: CebPhotoBundle:Default:DestroyCuisine }
+
+destroyFinition:
+    pattern:  /admin/delete/finition/{id}
+    defaults: { _controller: CebPhotoBundle:Default:DestroyFinition}
+
+destroyTravau:
+    pattern:  /admin/delete/travau/{id}
+    defaults: { _controller: CebPhotoBundle:Default:DestroyTravau }

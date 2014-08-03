@@ -27,7 +27,7 @@ security:
             form_login:
                 login_path: login
                 always_use_default_target_path: true
-                default_target_path: /admin/upload/bain
+                default_target_path: /admin/upload/travaux_fini
                 check_path: login_check
                 username_parameter:             _username
                 password_parameter:             _password
